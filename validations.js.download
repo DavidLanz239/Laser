@@ -1,0 +1,57 @@
+var normalize = (function() {
+    var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+    to = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+    mapping = {};
+
+    for(var i = 0, j = from.length; i < j; i++ )
+        mapping[ from.charAt( i ) ] = to.charAt( i );
+
+    return function( str ) {
+    var ret = [];
+    for( var i = 0, j = str.length; i < j; i++ ) {
+        var c = str.charAt( i );
+        if( mapping.hasOwnProperty( str.charAt( i ) ) )
+            ret.push( mapping[ c ] );
+        else
+            ret.push( c );
+    }
+    return ret.join( '' );
+}
+
+})();
+
+$(function() {
+    setTimeout(function() {
+        $('.only_alpha_numeric').on('paste input propertychange', function (e) {
+            var text = normalize($(this).val()).toUpperCase();
+            $(this).val(text.replace(/[^a-zA-Z0-9\s]/g, ''));
+        });
+        $('.only_alpha_numeric_pnr').on('paste input propertychange', function (e) {
+            var text = normalize($(this).val()).toUpperCase();
+            $(this).val(text.replace(/[^a-zA-Z0-9\s]/g, ''));
+            $(this).val($(this).val().substring(0, 6));
+        });
+        $('.blocked-seats').on('paste input propertychange', function (e) {
+            var text = normalize($(this).val()).toUpperCase();
+            $(this).val(text.replace(/[^a-zA-Z0-9],/g, ''));
+        });
+        $('.only_alpha_with_dash').on('paste input propertychange', function (e) {
+            var text = normalize($(this).val()).toUpperCase();
+            $(this).val(text.replace(/[^a-zA-Z\/\s]/g, ''));
+        });
+        $('.only_alpha').on('paste input propertychange', function (e) {
+            var text = normalize($(this).val()).toUpperCase();
+            $(this).val(text.replace(/[^a-zA-Z\s]/g, ''));
+        });
+        $('.only_numeric').on('paste input propertychange', function (e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $('.mail').on('paste input propertychange', function (e) {
+            $(this).val($(this).val().replace(/[^0-9A-Za-z‘\@\-\_\.]/g, ''));
+        });
+        $('.mails').on('paste input propertychange', function (e) {
+            $(this).val($(this).val().replace(/[^0-9A-Za-z‘\@\-\_\.,]+$/g, ''));
+                        $(this).val($(this).val().replace(/\s+/g, ''));
+        });
+    }, 0);
+});

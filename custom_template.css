@@ -1,0 +1,62 @@
+.tituloClases, .divisionClases, .fechas, .info1, #breadcrumbs-two a, .numVuelo, .gris3Fondo, #bd2 a, .tituloCaja, .tituloCaja .clickeable .top-40 {
+  background-color: rgb(192, 192, 193) !important;
+}
+.leg {
+  background-color: rgb(0, 175, 65) !important;
+  color: rgb(255, 255, 255) !important;
+}
+#breadcrumbs-two a::after {
+  border-left-color: rgb(192, 192, 193) !important;
+}
+#breadcrumbs-two a::before {
+  border-bottom-color: rgb(192, 192, 193) !important;
+  border-top-color: rgb(192, 192, 193) !important;
+}
+.btn {
+  background-color: rgb(0, 175, 65) !important;
+  color: rgb(250, 251, 250) !important;
+}
+.btn:hover {
+  background-color: rgb(0, 175, 65) !important;
+}
+#breadcrumbs-two .current, .btn.btn-primary.active, .btn.btn-primary:active, .tituloOn, .cajaPasajero.selec {
+  background-color: rgb(0, 175, 65) !important;
+  color: rgb(250, 251, 250) !important;
+}
+#breadcrumbs-two .current::before {
+  border-bottom-color: rgb(0, 175, 65) !important;
+  border-top-color: rgb(0, 175, 65) !important;
+}
+#breadcrumbs-two .current::after {
+  border-left-color: rgb(0, 175, 65) !important;
+}
+.tituloTrans {
+  background-color: rgb(0, 175, 65) !important;
+}
+.rech {
+  background-color: rgb(183, 10, 10) !important;
+}
+.back, .next, .seleccionFecha {
+  background-color: rgb(0, 175, 65) !important;
+}
+.summary {
+  background-color: rgb(0, 175, 65) !important;
+}
+.btnTarjeta {
+  background-color: rgb(0, 175, 65) !important;
+  color: rgb(0, 175, 65) !important;
+}
+.seat-map-route {
+  color: rgb(0, 175, 65) !important;
+}
+.selected {
+  background-color: rgb(254, 219, 0) !important;
+}
+.seatCharts-seat.unavailable {
+  background-color: rgb(183, 10, 10) !important;
+  color: rgb(255, 255, 255) !important;
+}
+.seatCharts-seat.available {
+  background-color: rgb(40, 179, 83) !important;
+  color: rgb(255, 255, 255) !important;
+}
